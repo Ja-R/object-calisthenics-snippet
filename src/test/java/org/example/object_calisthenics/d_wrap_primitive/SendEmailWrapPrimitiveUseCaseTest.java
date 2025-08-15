@@ -31,8 +31,8 @@ class SendEmailWrapPrimitiveUseCaseTest {
 		Email email = Email.builder()
 				.recipientEmailAddress(EmailAddress.forRecipient("recipient@test.be"))
 				.senderEmailAddress(EmailAddress.forSender("sender@test.be"))
-				.subject("subject")
-				.body("body")
+				.subject(new Subject("subject"))
+				.body(new Body("body"))
 				.build();
 
 		sendEmailUseCase.sendEmail(email);
@@ -47,8 +47,8 @@ class SendEmailWrapPrimitiveUseCaseTest {
 		Assertions.assertThatThrownBy(() -> Email.builder()
 						.recipientEmailAddress(EmailAddress.forRecipient(recipientEmailAddress))
 						.senderEmailAddress(EmailAddress.forSender("sender@test.be"))
-						.subject("subject")
-						.body("body")
+						.subject(new Subject("subject"))
+						.body(new Body("body"))
 						.build())
 				.isInstanceOf(IllegalArgumentException.class)
 				.hasMessage("Email address of recipient is invalid");
@@ -60,8 +60,8 @@ class SendEmailWrapPrimitiveUseCaseTest {
 		Assertions.assertThatThrownBy(() -> Email.builder()
 						.recipientEmailAddress(EmailAddress.forRecipient(recipientEmailAddress))
 						.senderEmailAddress(EmailAddress.forSender("sender@test.be"))
-						.subject("subject")
-						.body("body")
+						.subject(new Subject("subject"))
+						.body(new Body("body"))
 						.build())
 				.isInstanceOf(IllegalArgumentException.class)
 				.hasMessage("Email address of recipient is required");
@@ -74,8 +74,8 @@ class SendEmailWrapPrimitiveUseCaseTest {
 		Assertions.assertThatThrownBy(() -> sendEmailUseCase.sendEmail(Email.builder()
 						.recipientEmailAddress(EmailAddress.forRecipient("recipient@test.be"))
 						.senderEmailAddress(EmailAddress.forSender(senderEmailAddress))
-						.subject("subject")
-						.body("body")
+						.subject(new Subject("subject"))
+						.body(new Body("body"))
 						.build()))
 				.isInstanceOf(IllegalArgumentException.class)
 				.hasMessage("Email address of sender is invalid");
@@ -88,8 +88,8 @@ class SendEmailWrapPrimitiveUseCaseTest {
 		Assertions.assertThatThrownBy(() -> sendEmailUseCase.sendEmail(Email.builder()
 						.recipientEmailAddress(EmailAddress.forRecipient("recipient@test.be"))
 						.senderEmailAddress(EmailAddress.forSender(senderEmailAddress))
-						.subject("subject")
-						.body("body")
+						.subject(new Subject("subject"))
+						.body(new Body("body"))
 						.build()))
 				.isInstanceOf(IllegalArgumentException.class)
 				.hasMessage("Email address of sender is required");
@@ -101,7 +101,8 @@ class SendEmailWrapPrimitiveUseCaseTest {
 		Assertions.assertThatThrownBy(() -> sendEmailUseCase.sendEmail(Email.builder()
 						.recipientEmailAddress(EmailAddress.forRecipient("recipient@test.be"))
 						.senderEmailAddress(EmailAddress.forSender("sender@test.be"))
-						.subject("subject")
+						.subject(new Subject("subject"))
+						.body(new Body(null))
 						.build()))
 				.isInstanceOf(IllegalArgumentException.class)
 				.hasMessage("Body is required");

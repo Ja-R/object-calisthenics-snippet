@@ -1,4 +1,4 @@
-package org.example.object_calisthenics.d_wrap_primitive.step2;
+package org.example.object_calisthenics.d_wrap_primitive;
 
 public class Subject {
 	private final String value;

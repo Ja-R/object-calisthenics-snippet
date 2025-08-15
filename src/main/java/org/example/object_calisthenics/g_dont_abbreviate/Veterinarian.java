@@ -1,4 +1,4 @@
-package org.example.object_calisthenics.g_dont_abreviate;
+package org.example.object_calisthenics.g_dont_abbreviate;
 
 import org.example.object_calisthenics.f_wrap_collection.Clientele;
 import lombok.Getter;
