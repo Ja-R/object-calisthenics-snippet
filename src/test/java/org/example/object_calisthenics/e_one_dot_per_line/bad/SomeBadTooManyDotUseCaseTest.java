@@ -14,16 +14,16 @@ import java.util.List;
 import java.util.Set;
 
 @ExtendWith(MockitoExtension.class)
-class SomeBadTooManyDootUseCaseTest {
+class SomeBadTooManyDotUseCaseTest {
 
 	@Mock
 	private VetRepository vetRepository;
 
-	private SomeBadTooManyDootUseCase useCase;
+	private SomeBadTooManyDotUseCase useCase;
 
 	@BeforeEach
 	void setUp() {
-		useCase = new SomeBadTooManyDootUseCase(vetRepository);
+		useCase = new SomeBadTooManyDotUseCase(vetRepository);
 	}
 
 	private final Client client1 = new Client(
